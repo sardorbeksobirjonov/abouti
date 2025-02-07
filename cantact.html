@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Sardorbek Sobirjonov</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome ikonkalar kutubxonasi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .contact-card {
+            transform: translateY(30px) scale(0.95);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        .contact-card.show {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        .back-home-btn {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 24px;
+            background-color: #4F46E5;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .back-home-btn:hover {
+            background-color: #4338CA;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <section class="container mx-auto px-4 py-16 text-center">
+        <h2 class="text-4xl font-bold mb-8">Aloqa</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="contact-card bg-white p-8 rounded-lg shadow-lg transition-all">
+                <h3 class="text-2xl font-semibold mb-4">Mening bilan bog'laning</h3>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-lg font-medium text-gray-700">Ismingiz</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Ismingizni kiriting" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Email manzilingizni kiriting" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-medium text-gray-700">Xabar</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Xabaringizni kiriting" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Yuborish</button>
+                </form>
+            </div>
+            <div class="contact-card bg-white p-8 rounded-lg shadow-lg transition-all">
+                <h3 class="text-2xl font-semibold mb-4">Aloqa Ma'lumotlari</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-700">Telefon:</h4>
+                        <p class="text-gray-600">+998 93 089 81 19</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-700">Email:</h4>
+                        <p class="text-gray-600">sardorbeksobirjonov308@gmail.com</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-700">Manzil:</h4>
+                        <p class="text-gray-600">Andijon</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-700">Ijtimoiy Tarmoqlar:</h4>
+                        <div class="flex justify-center space-x-6 mt-4">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-3xl"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-3xl"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-3xl"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-3xl"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tugma Home qismiga o'tish uchun -->
+        <a href="index.html " class="back-home-btn">Home</a>
+    </section>
+
+    <script>
+        const contactCards = document.querySelectorAll('.contact-card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        contactCards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

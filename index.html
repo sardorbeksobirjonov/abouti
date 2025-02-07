@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Sardorbek Sobirjonov</title>
+    <link icon="stylesheet" href="x.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-item {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-300 min-h-screen">
+    <nav class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sardorbek Sobirjonov</h1>
+            <button id="menu-btn" class="md:hidden px-4 py-2 bg-gray-200 rounded-lg">Menu</button>
+            <ul id="menu" class="hidden md:flex space-x-4 md:space-x-4 md:static absolute top-16 left-0 w-full bg-white md:bg-transparent md:w-auto flex-col md:flex-row items-center">
+                <a href="index.html"><li class="nav-item px-4 py-2 rounded-lg hover:bg-gray-200 cursor-pointer">Home</li></a>
+                <a href="Aboute.html"><li class="nav-item px-4 py-2 rounded-lg hover:bg-gray-200 cursor-pointer">About</li></a>
+                <a href="mywork.html"><li class="nav-item px-4 py-2 rounded-lg hover:bg-gray-200 cursor-pointer">Portfolio</li></a>
+                <a href="Servike.html"><li class="nav-item px-4 py-2 rounded-lg hover:bg-gray-200 cursor-pointer">Services</li></a>
+                <a href="cantact.html"><li class="nav-item px-4 py-2 rounded-lg hover:bg-gray-200 cursor-pointer">Contact</li></a>
+            </ul>
+        </div>
+    </nav>
+    
+    <header class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-700 via-purple-500 to-pink-500 text-white shadow-lg">
+        <h2 class="text-5xl font-extrabold">Xush kelibsiz!</h2>
+        <p class="text-xl mt-4">Men Sardorbek Sobirjonov, web dasturchiman.</p>
+    </header>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
